@@ -1,25 +1,20 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Manup Template">
     <meta name="keywords" content="Manup, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kingdom Driven Queens | Queens Banquet</title>
-
+    <link rel="icon" href="assets/KDQ Logo Transparent.png" type="image/png">
+    <link rel="shortcut icon" href="assets/KDQ Logo Transparent.png" type="image/png">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -445,6 +440,181 @@
                 font-size: 28px;
             }
         }
+        /* Gallery Section Styles */
+.gallery-section {
+    background: #f8f9fa;
+}
+
+.gallery-filter {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gf-btn {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #9A7836;
+    color: #9A7836;
+    padding: 8px 20px;
+    margin: 0 5px 10px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gf-btn.active,
+.gf-btn:hover {
+    background: #9A7836;
+    color: #fff;
+}
+
+.gallery-grid {
+    margin: 0 -15px;
+}
+
+.gallery-item {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+.gi-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(154, 120, 54, 0.8), rgba(31, 19, 59, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.gallery-item:hover .gi-hover {
+    opacity: 1;
+}
+
+.gi-text {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.gi-text h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.gi-text p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Lightbox Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close:hover {
+    color: #9A7836;
+}
+
+.caption {
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    height: 50px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(154, 120, 54, 0.8);
+}
+
+/* Responsive Gallery */
+@media (max-width: 991px) {
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery-item img {
+        height: 180px;
+    }
+    
+    .gf-btn {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 
@@ -463,13 +633,15 @@
                 <div class="col-lg-9 col-md-9">
                     <div class="nav-menu float-right">
                         <nav class="mainmenu">
-                            <!---<ul>
+                            <ul>
                                 <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="./about-us.html">About</a></li>
+                                <!--<li><a href="./about-us.html">About</a></li>
                                 <li><a href="./speaker.html">Speakers</a></li>
                                 <li><a href="./schedule.html">Schedule</a></li>
-                                <li><a href="./contact.html">Contacts</a></li>
-                            </ul>--->
+                                <li><a href="./contact.html">Contacts</a></li>-->
+                                <li><a href="./gallery.html">Gallery</a></li>
+                                <li><a href="./resources.html">Resources</a></li>
+                            </ul>
                         </nav>
                     </div>
                 </div>
@@ -595,6 +767,134 @@
     </section>
     <!-- Video - Trailer Section End -->
 
+    <!-- Image Gallery Section Begin -->
+<section class="gallery-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Event Gallery</h2>
+                    <p>Memorable moments from our previous gatherings</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="gallery-filter">
+                    <button class="gf-btn active" data-filter="*">All</button>
+                    <button class="gf-btn" data-filter=".event">Events</button>
+                    <button class="gf-btn" data-filter=".speakers">Speakers</button>
+                    <button class="gf-btn" data-filter=".attendees">Attendees</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row gallery-grid">
+            <div class="col-lg-4 col-md-6 grid-item event">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-G-1.jpg" alt="Kingdom Driven Queens Event">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Queens Gathering</h4>
+                            <p>Women coming together in fellowship</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item speakers">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-G-5.jpg" alt="Kingdom Driven Queens Speakers">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Inspiring Speakers</h4>
+                            <p>Sharing wisdom and knowledge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item attendees">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-G-6.jpg" alt="Kingdom Driven Queens Attendees">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Engaged Audience</h4>
+                            <p>Women connecting and learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item event">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-G-8.jpg" alt="Kingdom Driven Queens Event">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Worship Moments</h4>
+                            <p>Praising and celebrating together</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item speakers">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-G-7.jpg" alt="Kingdom Driven Queens Speakers">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Powerful Messages</h4>
+                            <p>Transforming lives through words</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item attendees">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-G-2.jpg" alt="Kingdom Driven Queens Attendees">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Networking</h4>
+                            <p>Building connections and community</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item event">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-7.jpg" alt="Kingdom Driven Queens Event">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Celebration</h4>
+                            <p>Honoring achievements and growth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item speakers">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-2.jpg" alt="Kingdom Driven Queens Speakers">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Mentorship</h4>
+                            <p>Guiding the next generation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item attendees">
+                <div class="gallery-item">
+                    <img src="assets/KDQ-3.jpg" alt="Kingdom Driven Queens Attendees">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Fellowship</h4>
+                            <p>Sisterhood in action</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Image Gallery Section End -->
+
     <!---Brochure Section -->
     <div style="border: 4px solid gold; border-radius: 8px; padding: 8px; background-color: #f3e5f5;">
         <iframe
@@ -716,20 +1016,18 @@
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
-
+    <!-- Footer Section End  -->
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script>
         $(document).ready(function() {
             // Initialize the carousel
             $('.kdq-carousel').owlCarousel({
                 loop: true,
                 margin: 20,
-                nav: true,
                 dots: true,
                 autoplay: true,
                 autoplayTimeout: 4000,
@@ -783,6 +1081,62 @@
             // Initialize the countdown when page loads
             updateCountdown();
         });
+        ;
+// Gallery Filter Functionality
+$(document).ready(function() {
+    // Initialize gallery filter
+    $('.gf-btn').on('click', function() {
+        $('.gf-btn').removeClass('active');
+        $(this).addClass('active');
+        
+        var filterValue = $(this).attr('data-filter');
+        $('.gallery-grid').isotope({
+            filter: filterValue
+        });
+    });
+    
+    // Initialize Isotope for gallery filtering
+    if($('.gallery-grid').length) {
+        $('.gallery-grid').isotope({
+            itemSelector: '.grid-item',
+            layoutMode: 'fitRows'
+        });
+    }
+    
+    // Lightbox functionality
+    $('.gallery-item').on('click', function() {
+        var imgSrc = $(this).find('img').attr('src');
+        var imgAlt = $(this).find('img').attr('alt');
+        
+        // Create lightbox modal
+        var lightboxHTML = `
+            <div id="lightboxModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage" src="${imgSrc}" alt="${imgAlt}">
+                <div id="caption" class="caption">${imgAlt}</div>
+            </div>
+        `;
+        
+        $('body').append(lightboxHTML);
+        $('#lightboxModal').fadeIn();
+        
+        // Close lightbox
+        $('.close').on('click', function() {
+            $('#lightboxModal').fadeOut(function() {
+                $(this).remove();
+            });
+        });
+        
+        // Close when clicking outside image
+        $(document).on('click', function(e) {
+            if ($(e.target).is('#lightboxModal')) {
+                $('#lightboxModal').fadeOut(function() {
+                    $(this).remove();
+                });
+            }
+        });
+    });
+});
     </script>
 </body>
 </html>
