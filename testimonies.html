@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Kingdom Driven Queens Testimonies">
+    <meta name="keywords" content="KDQ, Kingdom Driven Queens, Testimonies, Queens Banquet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kingdom Driven Queens | Testimonies</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #a35cb7;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: #7f8c8d;
+        }
+        
+        .bg-gradient {
+            background: linear-gradient(120deg, #9A7836 0%, #1F133B 100%);
+        }
+        
+        .spad {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        
+        /* Header Styles */
+        .header-section {
+            padding: 15px 0;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo img {
+            max-height: 70px;
+        }
+        
+        .nav-menu .mainmenu ul li {
+            display: inline-block;
+            margin-right: 25px;
+        }
+        
+        .nav-menu .mainmenu ul li a {
+            color: #2c3e50;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu .mainmenu ul li a:hover {
+            color: #9A7836;
+            text-decoration: none;
+        }
+        
+        .primary-btn {
+            display: inline-block;
+            background: linear-gradient(120deg, #9A7836 0%, #1F133B 100%);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        /* Breadcrumb Section */
+        .breadcrumb-section {
+            padding: 100px 0 50px;
+            background: linear-gradient(rgba(154, 120, 54, 0.8), rgba(31, 19, 59, 0.8)), url('assets/KDQ-1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .breadcrumb-text h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .bt-option a {
+            color: #fff;
+            margin-right: 10px;
+        }
+        
+        .bt-option span {
+            color: #e6c86e;
+        }
+        
+        /* Testimonies Section */
+        .testimonies-section {
+            background: #f8f9fa;
+        }
+        
+        .testimony-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+            transition: all 0.3s;
+        }
+        
+        .testimony-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .ti-pic {
+            height: 350px;
+            overflow: hidden;
+        }
+        
+        .ti-pic img {
+            width: 100%;
+            height: 100%;
+             object-fit: contain; /* Shows entire image without cropping */
+    background: #f8f9fa; /* Adds background for empty space */
+            transition: all 0.5s;
+        }
+        
+        .testimony-item:hover .ti-pic img {
+            transform: scale(1.05);
+        }
+        
+        .ti-text {
+            padding: 30px;
+        }
+        
+        .ti-title {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .ti-title h4 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #9A7836;
+            margin-bottom: 5px;
+        }
+        
+        .ti-title span {
+            font-size: 16px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .ti-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .ti-content p {
+            margin-bottom: 15px;
+        }
+        
+        .ti-quote {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f5ff;
+            border-left: 4px solid #9A7836;
+            font-style: italic;
+        }
+        
+        /* Text Folding Styles */
+        .testimony-text {
+            max-height: 300px;
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.5s ease;
+        }
+        
+        .testimony-text.expanded {
+            max-height: none;
+        }
+        
+        .text-fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(transparent, white);
+            transition: opacity 0.3s ease;
+        }
+        
+        .testimony-text.expanded .text-fade {
+            opacity: 0;
+        }
+        
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #9A7836;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            padding: 0;
+        }
+        
+        .read-more-btn i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more-btn.expanded i {
+            transform: rotate(180deg);
+        }
+        
+        /* Footer */
+        .footer-section {
+            background: #801280;
+            color: #fff;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-text .ft-logo img {
+            max-height: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-text ul {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .footer-text ul li {
+            display: inline-block;
+            margin-right: 25px;
+        }
+        
+        .footer-text ul li a {
+            color: #bf63d8;
+            transition: all 0.3s;
+        }
+        
+        .footer-text ul li a:hover {
+            color: #9A7836;
+            text-decoration: none;
+        }
+        
+        .copyright-text {
+            margin-bottom: 20px;
+        }
+        
+        .ft-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(80, 10, 121, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .ft-social a:hover {
+            background: #9A7836;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .breadcrumb-text h2 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .breadcrumb-section {
+                padding: 80px 0 40px;
+            }
+            
+            .breadcrumb-text h2 {
+                font-size: 28px;
+            }
+            
+            .ti-pic {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-3">
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="assets/KDQ Logo Transparent.png" alt="KDQ Logo" style="height: 70px;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="nav-menu float-right">
+                        <nav class="mainmenu">
+                            <!-- Navigation menu can be added here if needed -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Queens Testimonies</h2>
+                        <div class="bt-option">
+                            <a href="./index.html">Home</a>
+                            <span>Testimonies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Testimonies Section Begin -->
+    <section class="testimonies-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Powerful Testimonies</h2>
+                        <p>Hear from our Queens about their transformative experiences</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Queen Yemisi's Testimony -->
+                <div class="col-lg-10 mx-auto">
+                    <div class="testimony-item">
+                        <div class="ti-pic">
+                            <img src="assets/queens/Queen Yemisi Ogunyemi.jpg" alt="Queen Yemisi">
+                        </div>
+                        <div class="ti-text">
+                            <div class="ti-title">
+                                <h4>Queen Yemisi</h4>
+                                <span>Kingdom Driven Queen</span>
+                            </div>
+                            <div class="testimony-text">
+                                <div class="ti-content">
+                                    <p>I have learnt that ancestral/demonic foundational thrones are real and their manifestations though subtle, must be demolished in order for me to fulfill and manifest my kingdom mandate. I also learnt the need to become more focused and avoid legitimate and illegitimate distractions.</p>
+                                    
+                                    <p>Before I could be passive about somethings but my spiritual antenna is more sharpened now. I learnt that the impact I make is my legacy manifesting through my giftings and talents. My eyes must be opened and enlightened before I can manifest His glory here on earth.</p>
+                                    
+                                    <p>The strategic operations of the blood of Jesus must be activated because there lies my victory. My angelic operations must also be activated so that I can enjoy its full benefits. All these I have been more proactive about.</p>
+                                    
+                                    <div class="ti-quote">
+                                        "I must daily live a consecrated life so that the devil will not have a legal ground and distract me from doing great exploits for God."
+                                    </div>
+                                    
+                                    <p>Learning from the book of Esther teaches me that I must be humble and obedient so that God can complete His work of making me what He wants me to be.</p>
+                                    
+                                    <p>Oh!!!!! The mystery of the womb is a powerful revelation that really blessed me. It is the first Altar where all men must first appear even our Lord Jesus Christ did. This teaching was mind blowing to me and I have not yet recovered.</p>
+                                    
+                                    <p>Understanding this mystery has helped me to reshape my vision (burden) for God to foster deliverance and dominate in the earth. Summarily, I learnt that we don't have the time, there is need for me to take immediate action because the whole world is eagerly waiting for my manifestations.</p>
+                                </div>
+                                <div class="text-fade"></div>
+                            </div>
+                            <button class="read-more-btn">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Queen Dineo's Testimony -->
+                <div class="col-lg-10 mx-auto">
+                    <div class="testimony-item">
+                        <div class="ti-pic">
+                            <img src="assets/queens/Queen Dineo Adegbuyi.jpg" alt="Queen Dineo">
+                        </div>
+                        <div class="ti-text">
+                            <div class="ti-title">
+                                <h4>Queen Dineo</h4>
+                                <span>Kingdom Driven Queen</span>
+                            </div>
+                            <div class="testimony-text">
+                                <div class="ti-content">
+                                    <p>I may not have retained everything Dr Janet has been teaching us throughout the year but I know this much; I have gained so much emotional and spiritual intelligence. I observed that my character was being moulded through reading the assignment books. I could practise self-control while angry more than before in dealing with my kids.</p>
+                                    
+                                    <p>I have had so many of my questions about crucial subjects in my Christian life answered in a simple but yet deep way.</p>
+                                    
+                                    <p>Before reading the Kingdom Identity book I always had questions about what exactly does it mean to be a Kingdom minded person, Kingdom citizen, ambassador of heaven etc. Words like Dominion, authority, rulership, kingdom felt like too high for me to understand and grasp.</p>
+                                    
+                                    <div class="ti-quote">
+                                        "I could feel that they are important subject words that I should get a good understanding of but I would always listen to sermons about them and come out the same way I went in - with no clue of what they really mean."
+                                    </div>
+                                    
+                                    <p>Upon reading the Kingdom Identity book it felt like a world of answers about all this deeply spiritual words was being opened for me. Put in a simple but yet comprehensible way I finally got it.</p>
+                                    
+                                    <p>I know there is still more revelations to get and now I will be able to catch the revelations because I have the core of the matter. While I was still mesmerized about my kingdom identity book then came the creme de la creme - The womb Altar revelation.</p>
+                                    
+                                    <p>Too much to digest at once, too powerful and profound left me speechless. I am still in awe of the revelation and I pray that like Dr Janet said I pray to have the wisdom to pray until the womb altar activating angels come and minister to me and help me understand even more clearly about this great mystery.</p>
+                                    
+                                    <p>I appreciate Dr Janet a lot, I was telling my husband the reason I try to attend the meetings always is because of how she is also so much dedicated to this work. No day has she ever been late for a meeting or unavailable for a small reason.</p>
+                                </div>
+                                <div class="text-fade"></div>
+                            </div>
+                            <button class="read-more-btn">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Queen Prudence's Testimony -->
+                <div class="col-lg-10 mx-auto">
+                    <div class="testimony-item">
+                        <div class="ti-pic">
+                            <img src="assets/queens/Queen Prudence Nyamashuka.jpg" alt="Queen Prudence Nyamashuka">
+                        </div>
+                        <div class="ti-text">
+                            <div class="ti-title">
+                                <h4>Queen Prudence Nyamashuka</h4>
+                                <span>Kingdom Driven Queen</span>
+                            </div>
+                            <div class="testimony-text">
+                                <div class="ti-content">
+                                    <p>I received complete restoration and deliverance from faulty foundational bondage, not just for myself but also my family members. This mentorship has given me a deeper revelation of who I am in Christ and the power and authority that I carry as a woman of God. Also I have been equipped and trained to arise and be the light for such a time as this.</p>
+                                </div>
+                                <div class="text-fade"></div>
+                            </div>
+                            <button class="read-more-btn">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Queen Palesa's Testimony -->
+                <div class="col-lg-10 mx-auto">
+                    <div class="testimony-item">
+                        <div class="ti-pic">
+                            <img src="assets/queens/Queen Palesa Mokoena.jpg" alt="Queen Palesa Mokoena">
+                        </div>
+                        <div class="ti-text">
+                            <div class="ti-title">
+                                <h4>Queen Palesa Mokoena</h4>
+                                <span>Kingdom Driven Queen</span>
+                            </div>
+                            <div class="testimony-text">
+                                <div class="ti-content">
+                                    <p>Through the mentorship, I've experienced profound growth and transformation. The guidance and support have positively impacted my life, family, and relationship with God.</p>
+                                    
+                                    <p><strong>1. Spiritual growth:</strong> Deepened understanding of God's love and kingdom identity.</p>
+                                    <p><strong>2. Knowledge and wisdom:</strong> Gained valuable insights and practical wisdom to navigate life's challenges.</p>
+                                    <p><strong>3. Personal growth:</strong> Developed self-awareness, confidence, and decision-making skills.</p>
+                                    <p><strong>4. Family impact:</strong> Improved relationships and ability to support loved ones.</p>
+                                    <p><strong>5. Ministry and purpose:</strong> Clarified my role and purpose in serving God and others.</p>
+                                    
+                                    <p>The mentorship sessions have resonated with my spirit, enabling me to make informed decisions and experience positive change. I'm grateful for the opportunity to grow in faith, wisdom, and relationships.</p>
+                                </div>
+                                <div class="text-fade"></div>
+                            </div>
+                            <button class="read-more-btn">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Queen Lesedi's Testimony -->
+                <div class="col-lg-10 mx-auto">
+                    <div class="testimony-item">
+                        <div class="ti-pic">
+                            <img src="assets/queens/Queen Lesedi Thutse.jpg" alt="Queen Lesedi Thutse">
+                        </div>
+                        <div class="ti-text">
+                            <div class="ti-title">
+                                <h4>Queen Lesedi Thutse</h4>
+                                <span>Kingdom Driven Queen</span>
+                            </div>
+                            <div class="testimony-text">
+                                <div class="ti-content">
+                                    <p>This program has really opened my eyes and changed the way I see myself and my purpose. I have learned that I carry gifts, talents, and even spiritual power inside me, and that God can use me to make a difference in my family, school, and community. I also understand more about the womb as a place of destiny and prayer, and how marriage is a covenant that carries God's plan.</p>
+                                    
+                                    <p>The teachings have helped me grow in my faith, believe in my value, and start preparing for the future with confidence. I am thankful because this program has made me see that I am chosen, I am special, and God has a big plan for my life.</p>
+                                </div>
+                                <div class="text-fade"></div>
+                            </div>
+                            <button class="read-more-btn">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Queen Dr. Ncomeka's Testimony -->
+                <div class="col-lg-10 mx-auto">
+                    <div class="testimony-item">
+                        <div class="ti-pic">
+                            <img src="assets/queens/Queen Dr. Ncomeka Mgxadeni.jpg" alt="Queen Dr. Ncomeka Mgxadeni">
+                        </div>
+                        <div class="ti-text">
+                            <div class="ti-title">
+                                <h4>Queen Dr. Ncomeka Mgxadeni</h4>
+                                <span>Kingdom Driven Queen</span>
+                            </div>
+                            <div class="testimony-text">
+                                <div class="ti-content">
+                                    <p>The greatest lesson I drew from my journey through The God-Head Book was discovering my true personal and Kingdom identity, rooted in 1 Peter 2:9 and the warning of Hosea 4:6. For the first time, I truly began to know myself not through the eyes of people or systems, but through Christ. I realized the danger of elevating leaders, institutions, or even myself into God's place. Such misalignment offends the Godhead and disturbs our spiritual order.</p>
+                                    
+                                    <p>Dr. Janet's powerful teachings opened my eyes to the irreplaceable role of the Holy Spirit. I learned that He is not an optional addition to our faith but the voice that unites the Father and the Son. This revelation transformed my view of peace and purpose: when we walk in divine unity, our lives become aligned with heaven's order.</p>
+                                    
+                                    <p>One of the most life-changing revelations was the redefinition of the womb. Dr. Janet showed me that it is not only a physical organ but also a spiritual portal where destiny is conceived and birthed. The womb is a gate of influence, a weapon of warfare, and a vessel of divine assignments. This truth awakened me to the power women carry and why the enemy so fiercely attacks it. Once we embrace the sacredness of our design, we become unstoppable, able to birth nations and release God's prophetic purpose into the world.</p>
+                                    
+                                    <p>This journey has ignited me. I now carry the Lord's burdens with joy, knowing that the soil of my womb can bring forth hidden treasures, gifts, and creative ideas. My story is also one of healing: I was once tormented by the trauma of my PhD journey, but through the encouragement of Dr. Janet and Queen Toyin, I found strength to overcome. Today, I thirst for the Word of God more than ever, and I am anchored in prayer like never before.</p>
+                                    
+                                    <p>If you want to rediscover your true identity, reclaim the prophetic power of womanhood, and walk in divine authority, this journey will inspire you to go deeper.</p>
+                                </div>
+                                <div class="text-fade"></div>
+                            </div>
+                            <button class="read-more-btn">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Queen Fountain Olubambi's Testimony -->
+<div class="col-lg-10 mx-auto">
+    <div class="testimony-item">
+        <div class="ti-pic">
+            <img src="assets/queens/Queen Fountain Olubambi.jpg" alt="Queen Fountain Olubambi">
+        </div>
+        <div class="ti-text">
+            <div class="ti-title">
+                <h4>Queen Fountain Olubambi</h4>
+                <span>Kingdom Driven Queen</span>
+            </div>
+            <div class="testimony-text">
+                <div class="ti-content">
+                    <p>I joined the Queens Mentorship Training this year, and my life has been very much impacted to the glory of God. During the 72 hours Praying and Fasting, my spiritual eyes were opened. I received many revelations concerning my family and my future. It was from that 72 hours that I received a word from God that my family and I should do 21 days of praying and fasting.</p>
+                    
+                    <p>This period sparked a new hunger for God's word in my life and opened me to many spiritual encounters. It also brought about reconciliation and restoration in my family at various levels. Our family altar became more powerful and consistent.</p>
+                    
+                    <p>I would recommend this Mentorship to young girls like me and everyone seeking restoration in different facets of relationships, Godly family living and building kingdom driven homes.</p>
+                </div>
+                <div class="text-fade"></div>
+            </div>
+            <button class="read-more-btn">
+                Read More <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Queen Governor Faith Sekhu's Testimony -->
+<div class="col-lg-10 mx-auto">
+    <div class="testimony-item">
+        <div class="ti-pic">
+            <img src="assets/queens/Queen Governor Faith Sekhu.jpg" alt="Queen Governor Faith Sekhu">
+        </div>
+        <div class="ti-text">
+            <div class="ti-title">
+                <h4>Queen Governor Faith Sekhu</h4>
+                <span>Kingdom Driven Queen</span>
+            </div>
+            <div class="testimony-text">
+                <div class="ti-content">
+                    <h5>Esther Chapter 8 Presentation & Testimony</h5>
+                    <p class="ti-quote">"So let it be written, so let it be established – Esther 8"</p>
+                    
+                    <p><strong>From Governor Faith Sekhu – Kingdom Queens Mentorship Program</strong><br>
+                    <strong>"The Awakening of a Kingdom Queen"</strong></p>
+                    
+                    <h6>Presentation: The Royal Decree of Redemption (Esther Chapter 8)</h6>
+                    <h6>Testimony: The Awakening of My Kingdom Identity</h6>
+                    
+                    <p>When I behold Esther Chapter 8, I do not merely see history; I see a divine constitution for how heaven partners with earth. Esther, crowned as queen, discovered that true queenship is not in ornament, but in intercession. She became the womb of a nation's redemption.</p>
+                    
+                    <p>Through the Kingdom Queens Mentorship Program and the 72 Hours of Consecration, God has awakened me to the reality of who I am in His Kingdom. I encountered the Spirit of the God-Head — the fullness of the Father, the Son, and the Holy Spirit and I realized that heaven resides within me. I am a carrier of divine essence, a vessel through which God's purposes manifest on earth.</p>
+                    
+                    <p>Intercession is not passive pleading; it is legislative authority. Esther knew the royal seat was given to her for kingdom purpose. When the decree of death was issued, she did not remain silent. She arose in revelation, understood her redemptive identity, and birthed a decree that realigned history.</p>
+                    
+                    <p>As I embraced the power of Kingdom identity, I discovered that true royalty is not about crowns or titles, but about alignment and obedience. My identity is my throne, a place of divine authority where I legislate heaven's will through prayer and decree.</p>
+                    
+                    <p>I now understand that the kingdom of God is within me. Often it lies dormant until I awaken to my identity. Esther 8 awakens me to my own redemptive mandate — that I am a vessel, a womb through which God can birth decrees that reconfigure nations. Influence without intercession is impotent. True power flows when life aligns with the Word of God, sealed by the blood of Jesus.</p>
+                    
+                    <p>The Spirit of Wisdom taught me to operate on thrones, not through human intellect but divine revelation. The Spirit of Wisdom is my compass, guiding me to govern through discernment and intimacy with the King.</p>
+                    
+                    <p>God, though sovereign, seeks partnership. He has entrusted authority to mankind and awaits a generation that will steward the womb of identity and release decrees that birth His purposes. Esther 8 is not just history; it is my call today.</p>
+                    
+                    <p>When I encountered the Mystery of the Womb, I realized that within me is a spiritual womb, the creative chamber where heaven's purposes are conceived. My prayers and intercessions became contractions that birth God's will for nations. My life is a womb of transformation through which destinies are birthed.</p>
+                    
+                    <p>I rise as a kingdom queen, set apart to use influence for victory, not vanity; for purpose, not position. I posture my life as a vessel through which heaven invades the structures of nations. My obedience and intercession will birth decrees of life, healing, and restoration over families, communities, and nations.</p>
+                    
+                    <p>Then came the revelation of Esther Chapter 8; a divine mirror that reflected my calling. Like Esther, I was reminded that influence without intercession is powerless.</p>
+                    
+                    <p>God positioned me not for vanity, but for victory. I am called to stand in the gap, to legislate in prayer, and to rewrite decrees over families, communities, and nations.</p>
+                    
+                    <div class="ti-quote">
+                        <p>By the authority of the King of Kings, I decree: let every decree of death over my life, family, and nation be revoked. Let the scrolls of heaven open and new decrees of life and divine alignment be written and sealed in the blood of Jesus. I rise as Esther rose. I legislate as Esther legislated. So let it be written, so let it be established, in Jesus' mighty Name. Amen.</p>
+                    </div>
+                    
+                    <p>During the 72 Hours of Consecration, I felt heaven's refining fire. I laid down my will and picked up His. My time in prayer became a birthing room where decrees of life replaced decrees of death. I came out renewed, repositioned, and reanointed.</p>
+                    
+                    <p>Today, I testify that I am a Kingdom Queen crowned with revelation, robed in intercession, and anointed to birth God's purposes on earth. Every decree of death is revoked, and new decrees of life, restoration, and destiny are now established in Jesus' mighty Name. So let it be written, so let it be established. Amen.</p>
+                </div>
+                <div class="text-fade"></div>
+            </div>
+            <button class="read-more-btn">
+                Read More <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Queen Maureen Tembo's Testimony -->
+<div class="col-lg-10 mx-auto">
+    <div class="testimony-item">
+        <div class="ti-pic">
+            <img src="assets/queens/Queen Maureen Tembo.jpg" alt="Queen Maureen Tembo">
+        </div>
+        <div class="ti-text">
+            <div class="ti-title">
+                <h4>Queen Maureen Tembo</h4>
+                <span>Kingdom Driven Queen</span>
+            </div>
+            <div class="testimony-text">
+                <div class="ti-content">
+                    <p>As I read the books and received the teachings, I sensed a need to re-dedicate my life to Jesus afresh and start a new journey in the light of God's Seven Spirits. I was able to pray prayers of consecration asking God to flush out the wrong things in my soul, body and heart.</p>
+                    
+                    <p>I learnt about relying on the Holy Spirit and praying at the gate of times, always being conscious of my appointment with the King of Kings. I became more consistent in prayers, study the Word and listening to God. Emphasis was laid on studying the book of Psalms which has been quite inspirational for me.</p>
+                    
+                    <p>I have become more sensitive to Holy Spirit's promptings. I experienced genuine repentance, learnt to let go, forgive and also overcame anger. I have discovered my Kingdom and Womb identity as a woman.</p>
+                    
+                    <p>My purpose and mandate is now very clear. My prayer is now for God to show me what He wants me to do and baptize me with the fullness of His 7 Spirits.</p>
+                </div>
+                <div class="text-fade"></div>
+            </div>
+            <button class="read-more-btn">
+                Read More <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Queen Trina Monze's Testimony -->
+<div class="col-lg-10 mx-auto">
+    <div class="testimony-item">
+        <div class="ti-pic">
+            <img src="assets/queens/Queen Trina Monze .jpg" alt="Queen Trina Monze">
+        </div>
+        <div class="ti-text">
+            <div class="ti-title">
+                <h4>Queen Trina Monze</h4>
+                <span>Kingdom Driven Queen</span>
+            </div>
+            <div class="testimony-text">
+                <div class="ti-content">
+                    <p>I first visited Apostle and Dr Janet in September 2024 when I came to Pretoria for work. We had booked to stay at their apartments. I decided to attend their Sunday evening bible study. I was ministered to in a very powerful way as the presence of God was so powerful.</p>
+                    
+                    <p>When Apostle handed me a book as a gift entitled "Rebuilding the Desolate Foundations", I felt the touch of parental love which I never experienced in my life. I sensed the urgent need to revisit my foundation as a believer, my marriage foundation, my family foundation as things were hard for me. I felt the emptiness in me as I reflected over my life.</p>
+                    
+                    <p>I shared about my life to Dr Janet, who shared with me the programmes under the Global Thrones International (GTI) to which I felt needed to do all of them because if I were to experience change in my life. She took me through some teachings and conducted deliverance when I visited their home this year in April. My life has never been the same from the day I went through the deliverance.</p>
+                    
+                    <p>The battle started when I joined the Queens Mentorship Class. I found myself with too much work to do such that it was a challenge to read the materials which we were guided to read. Sometimes, I would be in the middle of a trip (my job requires me to travel a lot) when I am required to be in a session and sometimes, I would be places where there was no network.</p>
+                    
+                    <p>On two occasions, only the books which we were instructed to use for our study went missing until the assignment was submitted. I ended up buying and using eBooks. Long periods of power outages mostly happened on days when there is a mentorship class. One day, I had to sit holding my phone in a particular position throughout the session so that it does not go off, a situation which normalized shortly after the session ended.</p>
+                    
+                    <p>As Dr. Janet taught more on the mystery of the WOMB, I from nowhere experienced a strange menstruation cycle that lasted for three (3) months to a point where I was told that my HB rate dropped to 6.3 and I needed urgent blood transfusion.</p>
+                    
+                    <p>The teachings on the mysteries of the womb have taught me to understand that I am God's special creation designed to incubate and give birth to things according to God's plan. I have understood that there was an Esther spirit deposited in me. God has given the burden and directed to pray to break generational patterns in my family blood line which have been tormenting us our lives for a long time.</p>
+                    
+                    <p>Reading the Spirit Godhead workbook made me understand God as the executor of the God's work on earth. I understood the attributes of the holy spirit and have learnt to apply them in my life every day. I have learnt the power of interceding for family to be delivered from generational curses that kept us under bondage for a long time.</p>
+                    
+                    <p>Studying the Power of Kingdom Identity book made me understand the in-depth of God as our creator, mysteries of Jesus, the reality of God's kingdom, the power that is in the word of God. I have deepened my levels of depending on the holy spirit to do things for an effective lifestyle and true transformation as a child of God.</p>
+                    
+                    <p>After understanding my kingdom identity, my life has been changing each day through prayer and studying God's word. Things are beginning to change because I have come to know the true meaning of being a child of God, a friend of Christ and that I am God's workmanship. I am working on understanding the full purpose for my life as I pursue a kingdom lifestyle.</p>
+                    
+                    <p>My mindset has also been renewed regarding prosperity. I am standing on Matthew 6:33, to seek ye first the kingdom of God and his righteousness so that prosperity follows. I am destined to prosper.</p>
+                    
+                    <p>The Spirit of Wisdom to Operate on Thrones book has taught me that I need all the seven spirits of wisdom from God to operate effectively in the market place every day.</p>
+                    
+                    <p>In conclusion, my life has been transformed through the teachings and prayers we have had. I have learnt the discipline of reading not just the Bible but other books. As a kingdom queen I need to be an example of what I eat, how I dress, my talking, my conduct and that I should fulfill God's calling on my life.</p>
+                </div>
+                <div class="text-fade"></div>
+            </div>
+            <button class="read-more-btn">
+                Read More <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</div>  
+                
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="#" class="primary-btn">Load More Testimonies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonies Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-text text-center">
+                        <div class="ft-logo">
+                            <a href="#"><img src="assets/KDQ Logo Transparent.png" alt="KDQ Logo" style="height: 70px;"></a>
+                        </div>
+                        <div class="copyright-text">
+                            <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Kingdom Driven Queens. All rights reserved.</p>
+                        </div>
+                        <div class="ft-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Text folding functionality
+            $('.read-more-btn').on('click', function() {
+                const $textContainer = $(this).siblings('.testimony-text');
+                const $button = $(this);
+                
+                $textContainer.toggleClass('expanded');
+                $button.toggleClass('expanded');
+                
+                if ($textContainer.hasClass('expanded')) {
+                    $button.html('Read Less <i class="fas fa-chevron-up"></i>');
+                } else {
+                    $button.html('Read More <i class="fas fa-chevron-down"></i>');
+                }
+            });
+            
+            // Hide "Read More" button for short testimonies
+            $('.testimony-text').each(function() {
+                const $textContainer = $(this);
+                const $button = $textContainer.siblings('.read-more-btn');
+                
+                // If content height is less than max-height, hide the button
+                if ($textContainer[0].scrollHeight <= 300) {
+                    $button.hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
