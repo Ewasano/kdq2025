@@ -28,29 +28,98 @@
     .section-title h2 { font-size: 36px; font-weight: 700; color: #a35cb7; margin-bottom: 15px; }
     .section-title p { font-size: 18px; color: #7f8c8d; }
 
-    /* Header Styles */
-    .header-section { padding: 15px 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    .logo img { max-height: 70px; }
-    .primary-btn { display: inline-block; background: linear-gradient(120deg, #9A7836 0%, #1F133B 100%); color: #fff; padding: 10px 22px; border-radius: 30px; font-weight: 600; }
+    /* Add this to your existing CSS */
+.primary-btn {
+    display: inline-block;
+    background: linear-gradient(120deg, #9A7836 0%, #1F133B 100%);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+}
 
-    /* Dropdown Menu Styles */
-    .nav-menu .mainmenu ul li.dropdown { position: relative; }
-    .nav-menu .mainmenu ul li .dropdown-menu { 
-        position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; 
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 5px; padding: 10px 0; 
-        opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; 
-        z-index: 1000; border: none; 
-    }
-    .nav-menu .mainmenu ul li.dropdown:hover .dropdown-menu { 
-        opacity: 1; visibility: visible; transform: translateY(0); 
-    }
-    .nav-menu .mainmenu ul li .dropdown-menu .dropdown-item { 
-        display: block; padding: 8px 20px; color: #2c3e50; font-weight: 500; 
-        text-transform: none; transition: all 0.3s; border: none; background: transparent; 
-    }
-    .nav-menu .mainmenu ul li .dropdown-menu .dropdown-item:hover { 
-        background: #f8f9fa; color: #9A7836; text-decoration: none; 
-    }
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Enhanced Lightbox Styles */
+.lightbox-content {
+    position: relative;
+    display: inline-block;
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    text-decoration: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(154, 120, 54, 0.8);
+}
+
+.modal-content {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+    /* Header Styles */
+        .header-section {
+            padding: 15px 0;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo img {
+            max-height: 70px;
+        }
+        
+        .nav-menu .mainmenu ul li {
+            display: inline-block;
+            margin-right: 25px;
+        }
+        
+        .nav-menu .mainmenu ul li a {
+            color: #2c3e50;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu .mainmenu ul li a:hover {
+            color: #9A7836;
+            text-decoration: none;
+        }
+        
     .dropdown-toggle::after { display: none; }
 
     /* Gallery Section Styles */
@@ -90,114 +159,274 @@
   </style>
 </head>
 <body>
-  <!-- Header Section Begin -->
-  <header class="header-section">
+ <header class="header-section">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 col-md-6">
-          <div class="logo">
-            <a href="./index.html">
-              <img src="assets/KDQ Logo Transparent.png" alt="KDQ Logo" style="height: 70px;">
-            </a>
-          </div>
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-3">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="assets/KDQ Logo Transparent.png" alt="KDQ Logo" style="height: 70px;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="nav-menu float-right">
+                    <nav class="mainmenu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="./gallery-2025.html">2025 Queens Banquet</a>
+                                    <a class="dropdown-item" href="./gallery-2024.html">2024 Queens Banquet</a>
+                                </div>
+                            </li>
+                            <li><a href="./resources.html">Resources</a></li>
+                            <li><a href="./testimonies.html">Testimonies</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6 col-md-6">
-          <div class="nav-menu float-right">
-            <nav class="mainmenu">
-              <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li class="dropdown active">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i></a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="./gallery-2025.html">2025 Queens Banquet</a>
-                    <a class="dropdown-item" href="./gallery-2024.html">2024 Events</a>
-                  </div>
-                </li>
-                <li><a href="./resources.html">Resources</a></li>
-                <li><a href="./testimonies.html">Testimonies</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
     </div>
-  </header>
-  <!-- Header End -->
-
-  <!-- 2025 Gallery Section Begin -->
-  <section class="gallery-section spad">
+</header>
+    <!-- Header End -->
+<!-- 2025 Gallery Section Begin -->
+<section class="gallery-section spad">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-title">
-            <h2>Queens Banquet 2025 Gallery</h2>
-            <p>Relive the amazing moments from our 2025 Queens Banquet "Awake My Glory"</p>
-            <a href="[YOUR_2026_REGISTRATION_LINK]" class="primary-btn" style="margin-top: 20px;">Register for 2026 Event</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="alert alert-info text-center" style="background: linear-gradient(120deg, #9A7836 0%, #1F133B 100%); color: white; border: none; border-radius: 10px; padding: 20px;">
-            <h4>🎊 Queens Banquet 2025 Was Amazing! 🎊</h4>
-            <p class="mb-0">Thank you to all the incredible queens who joined us. Can't wait to see you in 2026!</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="gallery-filter">
-            <button class="gf-btn active" data-filter="*">All</button>
-            <button class="gf-btn" data-filter=".banquet">Main Event</button>
-            <button class="gf-btn" data-filter=".speakers">Speakers</button>
-            <button class="gf-btn" data-filter=".worship">Worship</button>
-            <button class="gf-btn" data-filter=".attendees">Attendees</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row gallery-grid">
-        <!-- Add your 2025 event photos here -->
-        <div class="col-lg-4 col-md-6 grid-item banquet">
-          <div class="gallery-item">
-            <img src="assets/2025/banquet-1.jpg" alt="Queens Banquet 2025 Main Event">
-            <div class="gi-hover">
-              <div class="gi-text">
-                <h4>Main Banquet</h4>
-                <p>2025 Queens Banquet</p>
-              </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Queens Banquet 2025 Gallery</h2>
+                    <p>Relive the amazing moments from our 2025 Queens Banquet "Awake My Glory"</p>
+                    <a href="https://forms.gle/31j3mLQamzT9NxzNA" class="primary-btn" style="margin-top: 20px;">Register for 2026 Event</a>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-lg-4 col-md-6 grid-item speakers">
-          <div class="gallery-item">
-            <img src="assets/2025/speaker-1.jpg" alt="2025 Guest Speaker">
-            <div class="gi-hover">
-              <div class="gi-text">
-                <h4>Guest Speaker</h4>
-                <p>Inspiring message</p>
-              </div>
+
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="gallery-filter">
+                    <button class="gf-btn active" data-filter="*">All</button>
+                    <button class="gf-btn" data-filter=".main-event">Main Event</button>
+                    <button class="gf-btn" data-filter=".speakers">Speakers</button>
+                    <button class="gf-btn" data-filter=".worship">Worship</button>
+                    <button class="gf-btn" data-filter=".attendees">Attendees</button>
+                    <button class="gf-btn" data-filter=".celebration">Celebration</button>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-lg-4 col-md-6 grid-item worship">
-          <div class="gallery-item">
-            <img src="assets/2025/worship-1.jpg" alt="2025 Worship Session">
-            <div class="gi-hover">
-              <div class="gi-text">
-                <h4>Worship</h4>
-                <p>Powerful praise session</p>
-              </div>
+
+        <div class="row gallery-grid">
+            <!-- Main Event Photos -->
+            <div class="col-lg-4 col-md-6 grid-item main-event">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-01.jpg" alt="Queens Banquet 2025 Main Event">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Main Event</h4>
+                            <p>Queens Banquet 2025</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-lg-4 col-md-6 grid-item main-event">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-02.jpg" alt="Queens Banquet 2025 Gathering">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Evening Gathering</h4>
+                            <p>Women in fellowship</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item main-event">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-03.jpg" alt="Queens Banquet 2025 Event">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Banquet Setup</h4>
+                            <p>Beautiful venue setup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speakers -->
+            <div class="col-lg-4 col-md-6 grid-item speakers">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-04.jpg" alt="Guest Speaker 2025">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Guest Speaker</h4>
+                            <p>Inspiring message delivery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item speakers">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-05.jpg" alt="Speaker Session">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Speaker Session</h4>
+                            <p>Powerful teaching moment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Worship -->
+            <div class="col-lg-4 col-md-6 grid-item worship">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-06.jpg" alt="Worship Session">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Worship</h4>
+                            <p>Praise and worship</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item worship">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-07.jpg" alt="Worship Team">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Worship Team</h4>
+                            <p>Leading in praise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendees -->
+            <div class="col-lg-4 col-md-6 grid-item attendees">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-08.jpg" alt="Attendees Networking">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Networking</h4>
+                            <p>Women connecting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item attendees">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-09.jpg" alt="Group Photo">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Group Photo</h4>
+                            <p>Beautiful sisters</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Celebration -->
+            <div class="col-lg-4 col-md-6 grid-item celebration">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-Cake-01.jpg" alt="Celebration Cake">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Celebration Cake</h4>
+                            <p>Special moments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item celebration">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-11.jpg" alt="Celebration Moment">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Celebration</h4>
+                            <p>Joyful moments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more photos from your collection -->
+            <div class="col-lg-4 col-md-6 grid-item main-event">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-12.jpg" alt="Event Moment">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Special Moment</h4>
+                            <p>Memorable occasion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item attendees">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-13.jpg" alt="Attendees Engaged">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Engaged Audience</h4>
+                            <p>Active participation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item main-event">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-14.jpg" alt="Event Atmosphere">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Event Atmosphere</h4>
+                            <p>Beautiful setting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue adding more photos as needed -->
+            <div class="col-lg-4 col-md-6 grid-item speakers">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-15.jpg" alt="Speaker Engagement">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Speaker Engagement</h4>
+                            <p>Interactive session</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item worship">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-16.jpg" alt="Worship Moment">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Worship Moment</h4>
+                            <p>Spiritual connection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item attendees">
+                <div class="gallery-item">
+                    <img src="assets/event-2025/KDQ-2025-17.jpg" alt="Attendees Connection">
+                    <div class="gi-hover">
+                        <div class="gi-text">
+                            <h4>Sisterhood</h4>
+                            <p>Building connections</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add the remaining photos following the same pattern -->
+            <!-- You can continue adding all your photos from the event-2025 folder -->
+
         </div>
-        <!-- Add more 2025 photos as needed -->
-      </div>
     </div>
-  </section>
-  <!-- 2025 Gallery Section End -->
+</section>
+<!-- 2025 Gallery Section End -->
 
   <!-- Footer Section Begin -->
   <footer class="footer-section">
@@ -229,45 +458,105 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 
-  <script>
+<script>
     // Gallery Filter Functionality
     $(document).ready(function() {
-      // Initialize Isotope for gallery filtering
-      var $grid = $('.gallery-grid');
-      if ($grid.length) {
-        $grid.isotope({ itemSelector: '.grid-item', layoutMode: 'fitRows' });
-      }
+        // Initialize Isotope for gallery filtering
+        var $grid = $('.gallery-grid');
+        if ($grid.length) {
+            $grid.isotope({ itemSelector: '.grid-item', layoutMode: 'fitRows' });
+        }
 
-      // Filter buttons
-      $('.gf-btn').on('click', function() {
-        $('.gf-btn').removeClass('active');
-        $(this).addClass('active');
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-      });
+        // Filter buttons
+        $('.gf-btn').on('click', function() {
+            $('.gf-btn').removeClass('active');
+            $(this).addClass('active');
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        });
 
-      // Lightbox functionality
-      $('.gallery-item').on('click', function() {
-        var imgSrc = $(this).find('img').attr('src');
-        var imgAlt = $(this).find('img').attr('alt');
-        var lightboxHTML = `
-          <div id="lightboxModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImage" src="${imgSrc}" alt="${imgAlt}">
-            <div id="caption" class="caption">${imgAlt}</div>
-          </div>`;
-        $('body').append(lightboxHTML);
-        $('#lightboxModal').fadeIn();
-        $('.close').on('click', function() {
-          $('#lightboxModal').fadeOut(function() { $(this).remove(); });
+        // Enhanced Lightbox functionality
+        var currentImageIndex = 0;
+        var galleryImages = [];
+
+        // Collect all gallery images
+        $('.gallery-item img').each(function() {
+            galleryImages.push({
+                src: $(this).attr('src'),
+                alt: $(this).attr('alt')
+            });
         });
-        $(document).on('click', function(e) {
-          if ($(e.target).is('#lightboxModal')) {
-            $('#lightboxModal').fadeOut(function() { $(this).remove(); });
-          }
+
+        $('.gallery-item').on('click', function() {
+            var imgSrc = $(this).find('img').attr('src');
+            var imgAlt = $(this).find('img').attr('alt');
+            
+            // Find current image index
+            currentImageIndex = galleryImages.findIndex(img => img.src === imgSrc);
+
+            showLightbox(currentImageIndex);
         });
-      });
+
+        function showLightbox(index) {
+            var currentImg = galleryImages[index];
+            var lightboxHTML = `
+                <div id="lightboxModal" class="modal">
+                    <span class="close">&times;</span>
+                    <div class="lightbox-content">
+                        <img class="modal-content" id="modalImage" src="${currentImg.src}" alt="${currentImg.alt}">
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                    </div>
+                    <div id="caption" class="caption">${currentImg.alt}</div>
+                </div>
+            `;
+            
+            $('body').append(lightboxHTML);
+            $('#lightboxModal').fadeIn();
+
+            // Navigation handlers
+            $('.prev').on('click', function(e) {
+                e.stopPropagation();
+                navigate(-1);
+            });
+
+            $('.next').on('click', function(e) {
+                e.stopPropagation();
+                navigate(1);
+            });
+
+            // Keyboard navigation
+            $(document).on('keydown', function(e) {
+                if ($('#lightboxModal').is(':visible')) {
+                    if (e.key === 'ArrowLeft') navigate(-1);
+                    if (e.key === 'ArrowRight') navigate(1);
+                    if (e.key === 'Escape') closeLightbox();
+                }
+            });
+
+            function navigate(direction) {
+                currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+                var nextImg = galleryImages[currentImageIndex];
+                $('#modalImage').attr('src', nextImg.src).attr('alt', nextImg.alt);
+                $('#caption').text(nextImg.alt);
+            }
+
+            function closeLightbox() {
+                $('#lightboxModal').fadeOut(function() {
+                    $(this).remove();
+                    $(document).off('keydown');
+                });
+            }
+
+            $('.close').on('click', closeLightbox);
+            
+            $(document).on('click', function(e) {
+                if ($(e.target).is('#lightboxModal')) {
+                    closeLightbox();
+                }
+            });
+        }
     });
-  </script>
+</script>
 </body>
 </html>
