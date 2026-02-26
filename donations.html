@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Kingdom Driven Queens Mentorship Foundations - Donations & Partnership">
+    <meta name="keywords" content="KDQMF, donations, partnership, mentorship, foundation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="assets/KDQ Logo Transparent.png" type="image/png">
+    <link rel="shortcut icon" href="assets/KDQ Logo Transparent.png" type="image/png">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #a35cb7;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: #7f8c8d;
+        }
+        
+        .bg-gradient {
+            background: linear-gradient(120deg, #9A7836 0%, #1F133B 100%);
+        }
+        
+        .spad {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        
+        /* Header Styles */
+        .header-section {
+            padding: 15px 0;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo img {
+            max-height: 70px;
+        }
+        
+        .nav-menu .mainmenu ul li {
+            display: inline-block;
+            margin-right: 25px;
+        }
+        
+        .nav-menu .mainmenu ul li a {
+            color: #2c3e50;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu .mainmenu ul li a:hover {
+            color: #9A7836;
+            text-decoration: none;
+        }
+        
+        .primary-btn {
+            display: inline-block;
+            background: linear-gradient(120deg, #9A7836 0%, #1F133B 100%);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            padding: 150px 0 100px;
+            background: linear-gradient(rgba(233, 230, 230, 0.7), rgba(69, 68, 68, 0.7)), url('assets/KDQ-1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero-text span {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .hero-text h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        /* Donation Section */
+        .donation-section {
+            padding: 20px 0;
+            background: #f8f9fa;
+        }
+        
+        .donation-card {
+            margin-bottom: 30px;
+        }
+        
+        .donation-card h3 {
+            color: #75186c;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .bank-details {
+            background: #f0e6f5;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .bank-details h4 {
+            color: #9A7836;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .bank-details p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        
+        .bank-details strong {
+            color: #1F133B;
+            font-weight: 600;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .contact-info {
+            padding: 40px 0;
+        }
+        
+        .contact-info h4 {
+            color: #75186c;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: #9A7836;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .contact-item span {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        .footer-section {
+            background: #801280;
+            color: #fff;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-text .ft-logo img {
+            max-height: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-text ul {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .footer-text ul li {
+            display: inline-block;
+            margin-right: 25px;
+        }
+        
+        .footer-text ul li a {
+            color: #bf63d8;
+            transition: all 0.3s;
+        }
+        
+        .footer-text ul li a:hover {
+            color: #9A7836;
+            text-decoration: none;
+        }
+        
+        .copyright-text {
+            margin-bottom: 20px;
+        }
+        
+        .ft-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(80, 10, 121, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .ft-social a:hover {
+            background: #9A7836;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .hero-text h2 {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+            
+            .hero-text h2 {
+                font-size: 28px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .donation-card {
+                padding: 25px;
+            }
+        }
+
+        /* Dropdown Menu Styles */
+        .nav-menu .mainmenu ul li.dropdown {
+            position: relative;
+        }
+
+        .nav-menu .mainmenu ul li .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+        }
+
+        .nav-menu .mainmenu ul li.dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-menu .mainmenu ul li .dropdown-menu .dropdown-item {
+            display: block;
+            padding: 8px 20px;
+            color: #2c3e50;
+            font-weight: 500;
+            text-transform: none;
+            transition: all 0.3s;
+            border: none;
+            background: transparent;
+        }
+
+        .nav-menu .mainmenu ul li .dropdown-menu .dropdown-item:hover {
+            background: #f8f9fa;
+            color: #9A7836;
+            text-decoration: none;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+   <header class="header-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-3">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="assets/KDQ Logo Transparent.png" alt="KDQ Logo" style="height: 70px;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="nav-menu float-right">
+                    <nav class="mainmenu">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="./gallery-2025.html">2025 Queens Banquet</a>
+                                    <a class="dropdown-item" href="./gallery-2024.html">2024 Queens Banquet</a>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Outreaches<i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="./soul-rescue-outreach.html">Soul Rescue Outreach</a>
+                                </div>
+                            </li> 
+                            <li><a href="./donations.html" class="active">Donations</a></li>
+                            <li><a href="./resources.html">Resources</a></li>
+                            <li><a href="./testimonies.html">Testimonies</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hero-text">
+                    <span>PARTNER WITH US</span>
+                    <h2>DONATIONS & PARTNERSHIP</h2>
+                    <p>Support our mission to transform lives and restore glory to women across generations</p>
+                    <div class="hero-buttons">
+                        <a href="#bank-details" class="primary-btn">Banking Details</a>
+                        <a href="#contact" class="primary-btn" style="background: #a35cb7; margin-left: 15px;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+   <!-- Hero Section End -->
+
+    <!-- Donation Details Section Begin -->
+    <section class="donation-section" id="bank-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Banking Details</h2>
+                        <p>Your generous donations help us fulfill our mission</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="donation-card">
+                        <div class="bank-details">
+                            <h4>Kingdom Driven Queens Mentorship Foundations</h4>
+                            <p><strong>Bank:</strong> FIRST NATIONAL BANK</p>
+                            <p><strong>Account Number:</strong> 63173891657</p>
+                            <p><strong>Account Type:</strong> Cheque Account</p>
+                            <p><strong>Branch Code:</strong> 210855</p>
+                        </div>
+                        
+                        <!--<div class="mt-4">
+                            <h4><i class="fas fa-info-circle"></i> Important Information</h4>
+                            <p style="color: #7f8c8d; line-height: 1.6;">
+                                When making a donation, please use your name as reference so we can properly acknowledge your contribution. 
+                                All donations are tax-deductible as we are a registered Non-Profit Organization.
+                            </p>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Donation Details Section End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Contact Us</h2>
+                        <p>Get in touch with us for partnership opportunities</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h4><i class="fas fa-phone-alt"></i> Contact Information</h4>
+    
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Dineo: +27 79 733 1114</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>kdqueens22@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h4><i class="fas fa-hand-holding-heart"></i> Partnership Opportunities</h4>
+                        <p style="color: #7f8c8d; line-height: 1.6; margin-bottom: 20px;">
+                            Join us in transforming lives through monthly partnerships or one-time donations. 
+                            Every contribution makes a difference in empowering women and restoring destinies.
+                        </p>
+                        <p style="color: #7f8c8d; line-height: 1.6;">
+                            Your partnership enables us to continue our mission of awakening the queen in every woman 
+                            and restoring the glory of God for generational transformation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-text text-center">
+                        <div class="ft-logo">
+                            <a href="#"><img src="assets/KDQ Logo Transparent.png" alt="KDQ Logo" style="height: 70px;"></a>
+                        </div>
+                        <div class="copyright-text">
+                            <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Kingdom Driven Queens Mentorship Foundations. All rights reserved.</p>
+                        </div>
+                        <div class="ft-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for anchor links
+            $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+                if (
+                    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                    location.hostname == this.hostname
+                ) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        event.preventDefault();
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - 100
+                        }, 1000);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

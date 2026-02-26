@@ -664,6 +664,84 @@
     display: none;
 }
 
+/* ----- new organized board layout (preserves colours) ----- */
+.board-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.board-member {
+    flex: 1 1 180px;
+    background: transparent;
+    padding: 5px 0;
+    font-weight: 500;
+    color: #2c3e50;
+}
+.board-member span.role-tag {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #9A7836;
+    display: block;
+    line-height: 1.3;
+}
+/* for the financial manager we keep as original, but it will be inside grid if desired */
+.finance-row {
+    margin-top: 8px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+.finance-row span {
+    color: #9A7836;
+    font-weight: 400;
+}
+/* Contact card for Queen Dineo */
+.contact-card {
+    background: #ffffffd9;
+    padding: 20px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin: 20px 0 25px;
+    border: 1px solid rgba(154,120,54,0.15);
+    display: inline-block;
+    width: auto;
+    min-width: 280px;
+}
+.contact-card .contact-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+.contact-card .contact-row i {
+    width: 32px;
+    color: #9A7836;
+    font-size: 1.3rem;
+}
+.contact-card .contact-row span {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-right: 5px;
+}
+.contact-card .contact-row a {
+    color: #1F133B;
+    text-decoration: none;
+    font-weight: 500;
+}
+.contact-card .contact-row a:hover {
+    color: #9A7836;
+}
+/* small polish for registration number */
+.reg-number {
+    display: inline-block;
+    background: #f0e6f5;
+    padding: 5px 15px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    color: #4a235a;
+    margin: 10px 0;
+}
     </style>
 </head>
 
@@ -696,6 +774,7 @@
                                     <a class="dropdown-item" href="./soul-rescue-outreach.html">Soul Rescue Outreach</a>
                                 </div>
                             </li> 
+                            <li><a href="./donations.html">Donations</a></li>
                             <li><a href="./resources.html">Resources</a></li>
                             <li><a href="./testimonies.html">Testimonies</a></li>
                         </ul>
@@ -713,11 +792,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="hero-text">
-                    <span>QUEENS BANQUET 2025 WAS A SUCCESS! GET READY FOR 2026</span>
-                    <h2>THANK YOU FOR JOINING US<br>QUEENS CROWNING BANQUET 2025</h2>
+                    <!--<span>QUEENS BANQUET 2025 WAS A SUCCESS! GET READY FOR 2026</span>
+                    <h2>THANK YOU FOR JOINING US<br>QUEENS CROWNING BANQUET 2025</h2>-->
+                    <h2> KINGDOM DRIVEN QUEENS MENTORSHIP FOUNDATIONS</h2>
                     <div class="hero-buttons">
                         <a href="https://forms.gle/31j3mLQamzT9NxzNA" class="primary-btn">Register for 2026</a>
-                        <a href="./gallery-2025.html" class="primary-btn" style="background: #a35cb7; margin-left: 15px;">View 2025 Gallery</a>
+                        <!--<a href="./gallery-2025.html" class="primary-btn" style="background: #a35cb7; margin-left: 15px;">View 2025 Gallery</a>-->
                         <a href="./soul-rescue-outreach.html" class="primary-btn" style="background: #a35cb7; margin-left: 15px;">Soul Rescue Outreach</a>
                     </div>
                 </div>
@@ -726,39 +806,92 @@
     </div>
    </section>
    <!-- Hero Section End -->
-
-    <!-- Home About Section Begin -->
-    <section class="home-about-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    
-                    <!-- Image Carousel -->
-                    <div class="kdq-carousel owl-carousel owl-theme">
-                        <div class="ha-pic">
-                            <img src="assets/KDQ-Flyer-3.jpg" alt="Queens Banquet Flyer" class="img-fluid rounded shadow">
-                        </div>
-                       
+<!-- Home About Section Begin -->
+<section class="home-about-section spad" style="padding-bottom: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Image Carousel -->
+                <div class="kdq-carousel owl-carousel owl-theme">
+                    <div class="ha-pic">
+                        <img src="assets/KDQ-Flyer-3.jpg" alt="Queens Banquet Flyer" class="img-fluid rounded shadow">
                     </div>
                 </div>
-                 
-                <div class="col-lg-6">
-                    <div class="ha-text">
-                        <h2>About the Queens Banquet</h2>
-                        <h4>AWAKE, MY GLORY, AWAKE... PSALM 57:8</h4>
-                        <p><strong>VISION</strong><br>
-                           Awakening the Queen in every Woman and Restoring the Glory of God for Generational Transformation.</p>
-                        <p><strong>MISSION</strong><br>
-                            To Prepare and Mentor Women and Girls for the Thrones.</p>
-                        <p>To Awake the Glory of Ladies' Spiritual Wombs for the Healing of the Nations. To Ignite the Power of Ladies' Kingdom Identity to carry God's Glory.
-                            To Empower and Equip the unemployed, broken and hopeless Women to Fulfill their Kingdom Purposes. To Restore Women's Faulty Foundations - Personal, 
-                            Spiritual, Family and Marriage to Manifest God's Glory.</p>
+            </div>
+             
+            <div class="col-lg-6">
+                <div class="ha-text">
+                    <h2>About Us</h2>
+                    <h4>AWAKE, MY GLORY, AWAKE... PSALM 57:8</h4>
+                    <p><strong>VISION</strong><br>
+                       Awakening the Queen in every Woman and Restoring the Glory of God for Generational Transformation.</p>
+                    <p><strong>MISSION</strong><br>
+                        To Prepare and Mentor Women and Girls for the Thrones. To Awake the Glory of Ladies' Spiritual Wombs for the Healing of the Nations. To Ignite the Power of Ladies' Kingdom Identity to carry God's Glory. To Empower and Equip the unemployed, broken and hopeless Women to Fulfill their Kingdom Purposes. To Restore Women's Faulty Foundations - Personal, Spiritual, Family and Marriage to Manifest God's Glory.</p>
+                    
+                    <div class="reg-number">
+                        <i class="fas fa-check-circle" style="color:#9A7836;"></i> KDQMF (NPC) Reg Number 2025/708071/08
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Home About Section End -->
+    </div>
+</section>
+<!-- Home About Section End -->
+
+<!-- Board of Directors Section Begin -->
+<section class="board-section spad" style="padding-top: 0; background: #fcf8ff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2 style="color: #75186c;">Board of Directors</h2>
+                    <p>Guiding our vision with wisdom and grace</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Simple board grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0;">
+                    
+                    <!-- Queen Maseko -->
+                    <div style="background: white; padding: 40px 30px; text-align: center;">
+                        <p style="color: #75186c; font-size: 22px; font-weight: 600; margin: 0 0 8px 0;">Queen Maseko</p>
+                        <p style="color: #7f8c8d; font-size: 18px; margin: 0; font-weight: 400;">Olica Sizakele</p>
+                    </div>
+                    
+                    <!-- Queen Dineo -->
+                    <div style="background: white; padding: 40px 30px; text-align: center;">
+                        <p style="color: #75186c; font-size: 22px; font-weight: 600; margin: 0 0 8px 0;">Queen Dineo</p>
+                        <p style="color: #7f8c8d; font-size: 18px; margin: 0; font-weight: 400;">Eunice Maduna</p>
+                    </div>
+                    
+                    <!-- Queen Victoria -->
+                    <div style="background: white; padding: 40px 30px; text-align: center;">
+                        <p style="color: #75186c; font-size: 22px; font-weight: 600; margin: 0 0 8px 0;">Queen Victoria</p>
+                        <p style="color: #7f8c8d; font-size: 18px; margin: 0; font-weight: 400;">Kgongoana</p>
+                    </div>
+                    
+                    <!-- Queen Janet -->
+                    <div style="background: white; padding: 40px 30px; text-align: center;">
+                        <p style="color: #75186c; font-size: 22px; font-weight: 600; margin: 0 0 8px 0;">Queen Janet</p>
+                        <p style="color: #7f8c8d; font-size: 18px; margin: 0; font-weight: 400;">Adegbenro</p>
+                    </div>
+
+                    <!-- Financial Manager -->
+                    <div style="background: white; padding: 40px 30px; text-align: center;">
+                        <p style="color: #75186c; font-size: 22px; font-weight: 600; margin: 0 0 8px 0;">Sne'nhlanhla</p>
+                        <p style="color: #7f8c8d; font-size: 18px; margin: 0; font-weight: 400;">Masile</p>
+                        <span style="display: inline-block; background: linear-gradient(90deg, #9A7836, #75186c); color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 500; margin-top: 12px;">Financial Manager</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Board of Directors Section End -->
     
 
       <!-- Image Gallery Section Begin -->
@@ -891,7 +1024,7 @@
 
 
     <!-- Video - Trailer Section Begin -->
-    <section class="video-trailer-section bg-gradient spad">
+   <!-- <section class="video-trailer-section bg-gradient spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -907,13 +1040,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- Video - Trailer Section End -->
 
   
 
     <!---Brochure Section -->
-    <div style="border: 4px solid gold; border-radius: 8px; padding: 8px; background-color: #f3e5f5;">
+    <!--<div style="border: 4px solid gold; border-radius: 8px; padding: 8px; background-color: #f3e5f5;">
         <iframe
             src="https://drive.google.com/file/d/1O8v5h46rDxG034ssE3fUqT1yQVMjA2HY/preview"
             width="100%"
@@ -921,68 +1054,74 @@
             style="border: none;"
             allow="autoplay"
         ></iframe>
-    </div>
+    </div>-->
 
 
-    <!-- Contact Us Quick Section Begin -->
-    <section class="contact-section spad" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Contact Us</h2>
-                        <p>We'd love to hear from you</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <a href="tel:+27795341896" class="primary-btn m-2">+27 79 534 1896</a>
-                    <a href="tel:+27846267389" class="primary-btn m-2">+27 84 626 7389</a>
+   
+
+   <!-- Contact Section Begin -->
+<section class="contact-section spad" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with us for more information</p>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Contact Us Quick Section End -->
-
-    <!-- Contact Section Begin -->
-    <section class="contact-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title">
-                        <h2>Location</h2>
-                        <!--<p>Get directions to the event</p>-->
-                    </div>
-                    <div class="cs-text">
-                        <div class="ct-address">
-                            <span>Address:</span>
-                            <p>92 Alcade Road, Lynnwood Glen, Pretoria 0081 <br>South Africa</p>
-                            <!--<p>190 Corobay Ave, Garsfontein, Pretoria 0081 <br>South Africa</p>-->
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact-info">
+    
+                    
+                    <!-- Queen Dineo's Profile -->
+                    <div style="display: flex; align-items: center; margin-bottom: 30px;">
+                        <img src="assets/Queen-Dineo .jpeg" alt="Queen Dineo Maduna Adegbuyi" 
+                             style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-right: 25px; border: 4px solid #9A7836; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div>
+                            <h5 style="margin:0 0 5px 0; color:#75186c; font-size: 24px; font-weight: 700;">Queen Dineo Maduna Adegbuyi</h5>
+                            <!--<p style="margin:0; color:#9A7836; font-weight:600; font-size: 18px;">Director, Administration</p>-->
                         </div>
-                        <ul>
-                            <li>
-                                <span>Phone:</span>
-                                +27 79 534 1896 / +27 84 626 7389
-                            </li>
-                            <li>
-                                <span>Email:</span>
-                                info@kingdomdrivenqueens<br>
-                                kdqueens22@gmail.com
-                            </li>
-                        </ul>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span style="font-size: 18px;">+27 79 733 1114</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span style="font-size: 18px;">kdqueens22@gmail.com</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span style="font-size: 18px;">92 Alcade Road, Lynnwood Glen, Pretoria 0081, South Africa</span>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="cs-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.0813321651617!2d28.282398299999997!3d-25.767876999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95608e0c8cddbd%3A0x4f538f88771c9002!2s92%20Alcade%20Rd%2C%20Lynnwood%20Glen%2C%20Pretoria%2C%200081!5e0!3m2!1sen!2sza!4v1758223937264!5m2!1sen!2sza" allowfullscreen=""></iframe>
-                        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.4193234930926!2d28.276571210013703!3d-25.789736777239668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9560b919f45d59%3A0xafff7f06ade6306!2sThe%20Glen%20Venue!5e0!3m2!1sen!2sza!4v1761966964791!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="contact-info">
+                 
+                    
+                    <!-- Map -->
+                    <div class="cs-map" style="height: 300px; border-radius: 15px; overflow: hidden; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.0813321651617!2d28.282398299999997!3d-25.767876999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95608e0c8cddbd%3A0x4f538f88771c9002!2s92%20Alcade%20Rd%2C%20Lynnwood%20Glen%2C%20Pretoria%2C%200081!5e0!3m2!1sen!2sza!4v1758223937264!5m2!1sen!2sza" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            style="width: 100%; height: 100%; border: none;">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Contact Section End -->
+    </div>
+</section>
+<!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
